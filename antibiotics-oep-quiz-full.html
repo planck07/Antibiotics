@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Antibiotics and OEP steps quiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f8f9;--card:#fff;--ink:#10343d;--mute:#56747b;--line:#cfe0e3;--teal:#1b7f8c;--tealbg:#d9eef0;--bad:#a8402f;--good:#2b7a4b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f2429;--card:#16333a;--ink:#e4f1f3;--mute:#9bb8be;--line:#2a4a52;--teal:#5cc3cf;--tealbg:#1f4a52;--bad:#f0a090;--good:#8bd3a6}}
+:root[data-theme="dark"]{--bg:#0f2429;--card:#16333a;--ink:#e4f1f3;--mute:#9bb8be;--line:#2a4a52;--teal:#5cc3cf;--tealbg:#1f4a52;--bad:#f0a090;--good:#8bd3a6}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 "Source Sans 3",system-ui,sans-serif}
+main{max-width:560px;margin:0 auto;padding:28px 18px 48px}
+h1{font:500 30px/1.15 Fraunces,Georgia,serif;margin:0 0 10px}
+p{margin:0 0 14px}
+.mute{color:var(--mute);font-size:15px}
+button{font:600 17px "Source Sans 3",system-ui,sans-serif;min-height:48px;padding:0 20px;border-radius:8px;border:1.5px solid var(--teal);background:var(--teal);color:#fff;cursor:pointer;width:100%}
+button.opt{background:var(--card);color:var(--ink);border:1.5px solid var(--line);text-align:left;margin:0 0 10px;padding:12px 16px;font-weight:400;height:auto;user-select:none}
+button.opt.sel{border-color:var(--teal);background:var(--tealbg)}
+button.alt{background:var(--card);color:var(--teal)}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+input{width:100%;min-height:48px;padding:0 14px;font:400 17px "Source Sans 3",system-ui,sans-serif;border:1.5px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);margin:0 0 14px}
+.err{color:var(--bad);font-size:15px;min-height:22px;margin:4px 0 10px}
+.top{display:flex;justify-content:space-between;font-size:15px;color:var(--mute)}
+.bar{height:5px;background:var(--line);border-radius:3px;margin:8px 0 22px}
+.bar i{display:block;height:5px;background:var(--teal);border-radius:3px}
+.q{font:500 22px/1.3 Fraunces,Georgia,serif;margin:0 0 18px;user-select:none}
+.row{display:flex;gap:10px;margin:0 0 12px}.row button{flex:1}
+.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:0 0 16px}
+button.qn{padding:0;min-height:46px;background:var(--card);color:var(--ink);border:1.5px solid var(--line)}
+button.qn.done{background:var(--teal);color:#fff;border-color:var(--teal)}
+button.qn.cur{box-shadow:0 0 0 3px var(--ink)}
+.rv{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 12px}
+.rv .rq{font-weight:600;margin:0 0 8px}
+.rv p{margin:0 0 6px;font-size:16px}
+.no{color:var(--bad)}.yes{color:var(--good)}
+.code{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:16px;word-break:break-word;margin:0 0 14px}
+a.btn{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:8px;background:var(--teal);color:#fff;text-decoration:none;font-weight:600;margin-top:4px}
+@media (prefers-reduced-motion:no-preference){.bar i{transition:width .25s}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+var WKEY="f9393b69-9fd1-45c3-bbf0-1e9ffa293d7b",CH=260620620,LIMIT=3600,SK="abxoep60";
+var Q=[["A clinician starts an antibiotic before the culture result is back. This is:", ["Adjunct therapy", "Empiric therapy", "Definitive therapy", "Prophylactic therapy"], 1, "Empiric therapy is treatment before specific culture information is available. Prophylactic therapy is given to prevent an infection."], ["Antibiotics are given before abdominal surgery to prevent infection. This is:", ["Definitive therapy", "Supportive therapy", "Prophylactic therapy", "Empiric therapy"], 2, "Prophylactic therapy prevents an infection that hasn't yet happened."], ["Ideally, before antibiotic therapy begins, the suspected site of infection should be:", ["Cultured to identify the organism and its susceptibilities", "Irrigated with saline", "Treated empirically only", "Swabbed only after therapy ends"], 0, "Cultures from appropriate sites should be obtained before the first dose so the drug can be matched to the organism."], ["Which statement is correct?", ["Bactericidal drugs kill bacteria, while bacteriostatic drugs inhibit their growth", "Bactericidal drugs inhibit growth, while bacteriostatic drugs kill bacteria", "Both act only on anaerobes", "Both kill bacteria immediately"], 0, "Bacteriostatic drugs stop growth and eventually lead to bacterial death."], ["Anaerobic bacteria:", ["Survive in the absence of oxygen", "Are always gram-positive", "Need oxygen to survive", "Are always spiral-shaped"], 0, "Aerobic bacteria are the ones that need oxygen."], ["Why does the Optometric Extension Program promote standard test procedures?", ["Because other methods are always worse", "To remove the patient's response from testing", "To shorten the exam by skipping tests", "So practitioners obtain comparable results for the same patient"], 3, "Following a common technique makes results comparable. Other methods are not necessarily worse."], ["Treponema pallidum is a gram-negative spirochete that causes:", ["Endocarditis", "Gonorrhea", "Syphilis", "Urinary tract infection"], 2, "Neisseria causes gonorrhea, E. coli causes UTI, and Corynebacteria are linked to endocarditis."], ["A gram-negative coccus that causes gonorrhea is:", ["Neisseria", "E. coli", "Corynebacteria", "Staphylococcus"], 0, "Staphylococcus is a gram-positive coccus linked to toxic shock syndrome."], ["Which classes of antibiotics work by blocking protein formation?", ["Nalidixic acid", "Macrolides, tetracyclines and aminoglycosides", "Penicillins and cephalosporins", "Sulfonamides"], 1, "Penicillins and cephalosporins inhibit cell wall formation, sulfonamides prevent folic acid synthesis, and nalidixic acid interferes with DNA."], ["Sulfonamides act by:", ["Blocking protein synthesis", "Altering bacterial DNA", "Inhibiting cell wall formation", "Preventing folic acid synthesis"], 3, "Folic acid is needed to make purines and nucleic acids, so sulfonamides are bacteriostatic."], ["Why don't sulfonamides harm human cells?", ["Humans don't need folic acid", "They can't enter human cells", "Human cells use preformed folic acid", "They are inactive in humans"], 2, "Humans, and some bacteria, can use preformed folic acid, so blocking its synthesis doesn't affect them."], ["Roughly what proportion of patients seeking optometric services have a pathological condition needing referral?", ["About ten percent", "About half", "About a quarter", "About one percent"], 3, "The first procedure, ophthalmoscopy, is done to find or exclude pathology."], ["Co-trimoxazole (Bactrim) contains:", ["Trimethoprim plus sulfamethoxazole", "Ampicillin plus sulbactam", "Sulfisoxazole plus erythromycin", "Amoxicillin plus clavulanic acid"], 0, "It is used for UTIs, Pneumocystis pneumonia, ear infections and bronchitis, among others."], ["Pediazole combines sulfisoxazole with erythromycin and is used to treat:", ["Acne", "Urinary tract infection", "Syphilis", "Otitis media"], 3, "Azo-Gantrisin, which combines sulfisoxazole with phenazopyridine, is used for UTIs."], ["Which is a side effect of sulfonamides?", ["Ototoxicity", "Tooth discoloration", "Photosensitivity and crystalluria", "An Antabuse-like reaction"], 2, "Others include hemolytic and aplastic anemia, Stevens-Johnson syndrome and toxic nephrosis."], ["A patient is starting a sulfonamide. What should she be advised?", ["Take it with antacids", "Avoid all fluids", "Take it with dairy products", "Avoid the sun and keep up a good fluid intake"], 3, "Fluid helps prevent crystalluria, and photosensitivity means avoiding sunlight and tanning beds."], ["Sulfonamides may reduce the effectiveness of:", ["Oral contraceptives", "Vitamin supplements", "Insulin", "Antacids"], 0, "Women taking oral contraceptives should be warned."], ["During ophthalmoscopy a particle moves rapidly in the same direction as the eye movement. Where is it?", ["In the vitreous", "On the anterior lens surface", "In the centre of the lens", "On the cornea"], 3, "Rapid movement in the same direction as the eye means the cornea, and slow movement means the anterior lens surface."], ["Penicillins are also called:", ["Macrolides", "Quinolones", "Aminoglycosides", "Beta-lactams"], 3, "The name refers to the beta-lactam ring in their structure."], ["Penicillins kill bacteria by:", ["Blocking folic acid synthesis", "Inhibiting cell wall synthesis, so the cell lyses", "Altering DNA", "Blocking ribosomes"], 1, "They bind penicillin-binding protein, disrupting cell wall synthesis. They don't kill human cells."], ["Bacteria resist penicillin by producing:", ["Beta-lactamases", "Folic acid", "Protein kinase", "More penicillin-binding protein"], 0, "These enzymes destroy penicillins, so the drug is not effective."], ["Which is a beta-lactamase inhibitor?", ["Piperacillin", "Cloxacillin", "Ampicillin", "Clavulanic acid"], 3, "Clavulanic acid, tazobactam and sulbactam bind beta-lactamase and prevent it breaking down the penicillin."], ["Augmentin is a combination of:", ["Ticarcillin plus tazobactam", "Ampicillin plus sulbactam", "Piperacillin plus tazobactam", "Amoxicillin plus clavulanic acid"], 3, "Unasyn is ampicillin plus sulbactam, and Zosyn is piperacillin plus tazobactam."], ["Which four fundus features is the optometrist primarily interested in?", ["Macula, vitreous, lens and sclera", "Disc, lens, cornea and iris", "Disc, vessels, fundus field and macular area", "Vessels, lids, cilia and conjunctiva"], 2, "Each of these is examined in turn for the right eye and then the left eye."], ["Penicillins are used mainly against:", ["Viruses", "Fungi", "Gram-positive bacteria such as Streptococcus, Enterococcus and Staphylococcus", "Only anaerobes"], 2, "Extended-spectrum penicillins add gram-negative activity."], ["Allergic reactions to penicillin include:", ["Urticaria, pruritus and angioedema", "Crystalluria", "Ototoxicity", "Tooth discoloration"], 0, "Some allergic reactions are life-threatening."], ["Oral penicillin is best taken:", ["With fruit juice", "With cola", "On an empty stomach", "With caffeine"], 2, "Food slows absorption, and acids in juices or colas can deactivate the drug."], ["After giving a penicillin, how long should a patient be watched for an allergic reaction?", ["At least 30 minutes", "24 hours", "About 5 minutes", "About 2 hours"], 0, "Anaphylaxis is a serious risk with penicillins."], ["First-generation cephalosporins have:", ["Good gram-positive and poor gram-negative coverage", "No staphylococcal activity", "Only anaerobic activity", "Poor gram-positive and excellent gram-negative coverage"], 0, "Coverage shifts towards gram-negative bacteria in later generations."], ["Keratometry readings are 43.00 × 5 and 44.00 × 95. The gross corneal cylinder is:", ["+1.00 × 5", "−0.50 × 90", "−1.00 × 5", "−1.00 × 95"], 2, "The gross cylinder is the difference between the principal meridians, written with the minus axis at the flatter meridian."], ["Which generation of cephalosporins is the most potent against gram-negative bacteria but less active against gram-positive?", ["First", "Third", "Second", "None of them"], 1, "Fourth-generation agents are broad in spectrum, including gram-positive bacteria."], ["Cefixime (Suprax) is notable because it is:", ["The only oral third-generation cephalosporin", "A penicillin", "A first-generation drug", "An IV-only agent"], 0, "It is the best of the oral cephalosporins against gram-negative bacteria."], ["Ceftriaxone is useful for CNS infections because it:", ["Is excreted only by the biliary route", "Is taken only orally", "Has a short half-life", "Easily passes the meninges and diffuses into CSF"], 3, "It also has a long half-life, allowing once-a-day dosing."], ["Which cephalosporin is used for difficult-to-treat organisms such as Pseudomonas?", ["Ceftazidime", "Cephalexin", "Cefazolin", "Cefadroxil"], 0, "Ceftazidime has excellent gram-negative coverage and is eliminated by the kidneys."], ["A patient allergic to penicillin is prescribed a cephalosporin. Why should the pharmacist be alerted?", ["Chelation", "Cross-allergy", "Photosensitivity", "Theophylline interaction"], 1, "Cephalosporins are structurally and pharmacologically related to penicillins."], ["For the gross cylinder of −1.00 × 5, Javal's rule gives a net cylinder of:", ["−0.25 × 5", "−1.25 × 5", "−0.75 × 5", "−0.50 × 90"], 2, "Add one-fourth of the gross cylinder (−0.25) for the distance factor to get −1.25 × 5, then allow for physiological astigmatism of −0.50 × 90 to get −0.75 × 5."], ["Some cephalosporins may cause an Antabuse-like reaction with:", ["Alcohol", "Dairy products", "Antacids", "Sunlight"], 0, "Patients should avoid alcohol while taking them."], ["Tetracyclines are:", ["Bacteriostatic inhibitors of protein synthesis", "Folic acid blockers", "Bactericidal inhibitors of cell wall synthesis", "Bactericidal DNA inhibitors"], 0, "They stop many essential functions of the bacteria by blocking protein synthesis."], ["Why should tetracyclines not be taken with milk, antacids or iron?", ["They bind calcium, magnesium, aluminium and iron to form insoluble complexes, reducing absorption", "They increase absorption", "They become toxic", "They cause photosensitivity"], 0, "This is chelation, and it stops the drug being absorbed."], ["Tetracyclines are avoided in pregnancy and in children because they:", ["Discolour teeth and may retard fetal skeletal development", "Cause ototoxicity", "Cause crystalluria", "Block folic acid synthesis"], 0, "They have a strong affinity for calcium."], ["Demeclocycline, a tetracycline, is also used to treat:", ["Diabetes insipidus", "SIADH", "Acromegaly", "Graves' disease"], 1, "It is also used for pleural and pericardial effusions."], ["In a phoria test, base-in prism remaining at the end point of vertical alignment is recorded as:", ["Orthophoria", "Esophoria", "Hyperphoria", "Exophoria"], 3, "Base-out remaining is esophoria, and zero is orthophoria."], ["Aminoglycosides are given by injection because:", ["They are poorly absorbed orally", "They are lipid-soluble", "They are inactive in blood", "They are destroyed by light"], 0, "There are no oral forms."], ["The two most important toxicities of aminoglycosides are:", ["Hepatotoxicity and jaundice", "Tooth discoloration and superinfection", "Photosensitivity and hemolysis", "Nephrotoxicity and ototoxicity"], 3, "Ototoxicity affects the eighth cranial nerve, and drug levels must be monitored."], ["Peak and trough blood levels are monitored for which class?", ["Tetracyclines", "Penicillins", "Sulfonamides", "Aminoglycosides"], 3, "Monitoring helps prevent nephrotoxicity and ototoxicity."], ["Quinolones kill bacteria by:", ["Preventing folic acid synthesis", "Blocking protein synthesis", "Blocking cell wall synthesis", "Altering bacterial DNA"], 3, "They don't affect human DNA."], ["Taking a quinolone together with an antacid will:", ["Convert it to its active form", "Reduce its absorption", "Increase its absorption", "Cause hepatotoxicity"], 1, "Antacids interfere with absorption of quinolones."], ["In static retinoscopy with a 20-inch working distance, the lens equivalent subtracted from the total is:", ["1.50 D", "2.00 D", "1.00 D", "0.50 D"], 1, "A 26-inch working distance needs 1.50 D subtracted."], ["Quinolones should not be given together with:", ["Paracetamol", "Theophylline", "Water", "Vitamin C"], 1, "This is an important interaction."], ["Quinolones were the first oral antibiotics effective against:", ["Viruses", "Gram-negative bacteria", "Fungi", "Protozoa"], 1, "They also have excellent oral absorption."], ["A patient on a quinolone should drink at least:", ["3 L of fluid per day, unless otherwise specified", "No extra fluid", "Exactly 1 L per day", "500 mL per day"], 0, "Sulfonamides need about 2400 mL per day."], ["Erythromycin, unlike most antibiotics, is usually taken:", ["With tetracycline", "With food, because it causes severe GI distress", "With antacids", "On an empty stomach"], 1, "Absorption is better on an empty stomach, but the GI upset leads many people to take it after a meal."], ["Compared with erythromycin, azithromycin and clarithromycin have:", ["More GI side effects", "Poorer efficacy", "A shorter duration of action", "Fewer side effects, longer duration of action and better tissue penetration"], 3, "Erythromycin's main side effects are nausea, vomiting, diarrhea and hepatotoxicity."], ["In dynamic retinoscopy at 20 inches, the purpose is to find:", ["The astigmatic axis", "The add correction", "The heterophoria", "The fusional reserve"], 1, "No working-distance correction is applied, since the fixation distance and the working distance are the same."], ["Macrolides are useful for:", ["Strep infections, Chlamydia and Mycoplasma", "Viral infections", "Surgical prophylaxis", "Pseudomonas"], 0, "They are also used for Haemophilus influenzae in mild to moderate URIs, syphilis and Lyme disease."], ["Macrolides are highly protein-bound, so they may:", ["Fail to reach tissues", "Be rapidly excreted", "Interact severely with other protein-bound drugs", "Be inactive by mouth"], 2, "Other protein-bound drugs compete with them."], ["A patient feels better after three days of an antibiotic and wants to stop. What should she be told?", ["Save the rest for next time", "Halve the dose", "Stop once she feels better", "Take it exactly as prescribed for the full length of time"], 3, "Stopping early can leave the infection incompletely treated."], ["Which antibiotics are exceptions that are taken with food?", ["Penicillin G and tetracycline", "Ciprofloxacin and doxycycline", "Nitrofurantoin and cefuroxime", "Gentamicin and kanamycin"], 2, "Most antibiotics are best absorbed on an empty stomach."], ["Fever, perineal itching, cough, lethargy or unusual discharge during antibiotic therapy suggest:", ["A penicillin allergy", "Aminoglycoside toxicity", "A therapeutic effect", "Superinfection"], 3, "Antibiotics can allow overgrowth of nonsusceptible organisms such as Candida."], ["Which neutralising lens is used when static retinoscopy shows 'against' motion?", ["A cross cylinder", "A prism", "A minus lens", "A plus lens"], 2, "A plus lens neutralises 'with' motion, and a minus lens neutralises 'against' motion."]];
+var app=document.getElementById("app"),order,i,end,tmr,active=false,t0,picks=[],sw=0,nm="";
+function hs(t){var x=5381;for(var k=0;k<t.length;k++){x=((x<<5)+x+t.charCodeAt(k))>>>0;}return x;}
+function shuffle(a){for(var x=a.length-1;x>0;x--){var j=Math.floor(Math.random()*(x+1)),t=a[x];a[x]=a[j];a[j]=t;}return a;}
+function sget(){try{return JSON.parse(localStorage.getItem(SK));}catch(e){return null;}}
+function sset(v){try{localStorage.setItem(SK,JSON.stringify(v));}catch(e){}}
+function p2(n){return String(n).padStart(2,"0");}
+function mmss(ms){var s=Math.max(0,Math.floor(ms/1000));return p2(Math.floor(s/60))+":"+p2(s%60);}
+function gate(){
+ var s=sget();
+ if(s&&s.done){showResult(s,false);return;}
+ if(s&&s.started){app.innerHTML='<h1>Quiz already started</h1><p>This quiz was started on this device and can\'t be restarted. Contact your instructor.</p><p class="mute">Started by '+s.name+'.</p>';return;}
+ app.innerHTML='<h1>Antibiotics and OEP steps quiz</h1><p class="mute">Antibiotics, with OEP steps 1 to 6</p><p>'+Q.length+' multiple-choice questions, '+(LIMIT/60)+' minutes. One attempt. You can go back and change answers before you submit, and afterwards you will see all your answers, right and wrong, with explanations for the ones you missed.</p><label for="nm" class="mute">Your full name</label><input id="nm" autocomplete="name" placeholder="Ama Mensah"><label for="pw" class="mute">Access code from your instructor</label><input id="pw" type="password" autocomplete="off"><div class="err" id="err" role="alert"></div><button id="go">Start quiz</button>';
+ var err=document.getElementById("err");
+ document.getElementById("go").onclick=function(){
+  var name=document.getElementById("nm").value.trim();
+  if(!name){err.textContent="Enter your name first.";return;}
+  if(hs(document.getElementById("pw").value.trim().toLowerCase())!==CH){err.textContent="That access code isn't right. Check it and try again.";return;}
+  begin(name);
+ };
+}
+function begin(name){
+ var idx=[];for(var k=0;k<Q.length;k++){idx.push(k);}
+ order=shuffle(idx).map(function(n){var o=Q[n][1].map(function(t,j){return {t:t,o:j};});return {n:n,q:Q[n][0],opts:shuffle(o)};});
+ picks=[];for(var z=0;z<Q.length;z++){picks.push(-1);}
+ i=0;sw=0;active=true;nm=name;t0=Date.now();end=t0+LIMIT*1000;
+ sset({started:t0,name:name});
+ tmr=setInterval(function(){var el=document.getElementById("tm"),l=end-Date.now();if(el){el.textContent=mmss(l);}if(l<=0){finish();}},1000);
+ ask();
+}
+function head(){
+ var d=0;for(var k=0;k<picks.length;k++){if(picks[k]>=0){d++;}}
+ return {done:d,html:'<div class="top"><span>'+d+' of '+Q.length+' answered</span><span>Time left <b id="tm">'+mmss(end-Date.now())+'</b></span></div><div class="bar"><i style="width:'+Math.round(d/Q.length*100)+'%"></i></div>'};
+}
+function ask(){
+ var d=order[i],h=head().html;
+ h+='<p class="mute">Question '+(i+1)+' of '+Q.length+'</p><p class="q">'+d.q+'</p>';
+ for(var k=0;k<d.opts.length;k++){h+='<button class="opt'+(picks[i]===k?' sel':'')+'" data-k="'+k+'">'+d.opts[k].t+'</button>';}
+ h+='<div class="row">'+(i>0?'<button id="bk" class="alt">Back</button>':'')+'<button id="nx">'+(i<Q.length-1?'Next':'Review')+'</button></div><button id="all" class="alt">All questions</button><p class="mute" style="margin-top:14px">Leaving this tab is recorded.</p>';
+ app.innerHTML=h;
+ var o=app.querySelectorAll(".opt");
+ for(var n=0;n<o.length;n++){o[n].onclick=function(){picks[i]=+this.getAttribute("data-k");ask();};}
+ var bk=document.getElementById("bk");if(bk){bk.onclick=function(){i--;ask();};}
+ document.getElementById("nx").onclick=function(){if(i<Q.length-1){i++;ask();}else{overview();}};
+ document.getElementById("all").onclick=overview;
+}
+function overview(){
+ var hd=head(),left=Q.length-hd.done,conf=false;
+ var h=hd.html+'<h1 style="font-size:24px">All questions</h1><p class="mute">Filled numbers are answered. Outlined numbers are not answered yet. Tap a number to open that question.</p><div class="grid">';
+ for(var k=0;k<Q.length;k++){h+='<button class="qn'+(picks[k]>=0?' done':'')+(k===i?' cur':'')+'" data-q="'+k+'" aria-label="Question '+(k+1)+(picks[k]>=0?', answered':', not answered')+'">'+(k+1)+'</button>';}
+ h+='</div><div class="err" id="err" role="alert"></div><div class="row"><button id="rt" class="alt">Back to question</button><button id="sub">Submit quiz</button></div>';
+ app.innerHTML=h;
+ var g=app.querySelectorAll(".qn");
+ for(var n=0;n<g.length;n++){g[n].onclick=function(){i=+this.getAttribute("data-q");ask();};}
+ document.getElementById("rt").onclick=ask;
+ document.getElementById("sub").onclick=function(){
+  if(left>0&&!conf){conf=true;document.getElementById("err").textContent=left+" question"+(left>1?"s are":" is")+" not answered. Tap Submit quiz again to submit anyway.";return;}
+  finish();
+ };
+}
+function finish(){
+ if(!active){return;}
+ active=false;clearInterval(tmr);
+ var score=0,rev=[],answered=0;
+ for(var k=0;k<order.length;k++){
+  var e=order[k],c=picks[k]>=0?e.opts[picks[k]]:null,d=Q[e.n],ok=!!c&&c.o===d[2];
+  if(c){answered++;}
+  if(ok){score++;}
+  rev.push([e.n+1,d[0],c?c.t:"Not answered",d[1][d[2]],ok?"":d[3],ok?1:0]);
+ }
+ rev.sort(function(a,b){return a[0]-b[0];});
+ var used=mmss(Math.min(Date.now(),end)-t0);
+ var code=nm+" | "+score+"/"+Q.length+" | tab leaves: "+sw+" | time used: "+used;
+ var s={started:t0,name:nm,done:1,score:score,total:Q.length,code:code,review:rev};
+ sset(s);
+ showResult(s,true);
+ var fail="Couldn't send automatically. Send the result code below to your instructor.";
+ if(WKEY.indexOf("PASTE")===0){setStatus(fail);return;}
+ setStatus("Sending your result…");
+ var missed=rev.filter(function(r){return !r[5];}).map(function(r){return r[0];}).join(", ");
+ try{fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({access_key:WKEY,subject:"Antibiotics and OEP quiz result: "+nm,name:nm,score:score+" / "+Q.length,answered:answered,missed_question_numbers:missed||"none",tab_leaves:sw,time_used:used})}).then(function(r){return r.json();}).then(function(d){setStatus(d&&d.success?"Your result was sent to your instructor.":fail);}).catch(function(){setStatus(fail);});}catch(e){setStatus(fail);}
+}
+var statusMsg="";
+function setStatus(t){statusMsg=t;var el=document.getElementById("st");if(el){el.textContent=t;}}
+function showResult(s,fresh){
+ var r=s.review||[],wrong=0;
+ for(var k=0;k<r.length;k++){if(!r[k][5]){wrong++;}}
+ var only=false;
+ function draw(){
+  var h='<h1>You scored '+s.score+' / '+s.total+'</h1><p class="mute" id="st">'+(fresh?statusMsg:"Your result was already submitted on this device.")+'</p>';
+  h+='<h2 style="font:500 22px Fraunces,Georgia,serif;margin:18px 0 6px">Your answers</h2><p class="mute">'+s.score+' correct, '+wrong+' wrong or unanswered. Correct answers are marked. Each wrong one shows the right answer and why.</p><div class="row"><button id="fa" class="'+(only?'alt':'')+'">All questions</button><button id="fw" class="'+(only?'':'alt')+'">Wrong only</button></div>';
+  for(var k=0;k<r.length;k++){
+   if(only&&r[k][5]){continue;}
+   if(r[k][5]){h+='<div class="rv"><p class="rq">'+r[k][1]+'</p><p class="yes"><b>Correct:</b> '+r[k][3]+'</p></div>';}
+   else{h+='<div class="rv"><p class="rq">'+r[k][1]+'</p><p class="no">Your answer: '+r[k][2]+'</p><p class="yes">Correct answer: '+r[k][3]+'</p><p><b>Why:</b> '+r[k][4]+'</p></div>';}
+  }
+  h+='<p>Your result code:</p><div class="code">'+s.code+'</div><button id="cp" class="alt">Copy result code</button><div class="err" id="cerr"></div><a class="btn" href="quit.html">Exit exam</a>';
+  app.innerHTML=h;
+  document.getElementById("fa").onclick=function(){only=false;draw();};
+  document.getElementById("fw").onclick=function(){only=true;draw();};
+  document.getElementById("cp").onclick=function(){var m=document.getElementById("cerr");try{navigator.clipboard.writeText(s.code).then(function(){m.textContent="Copied.";},function(){m.textContent="Select the code above and copy it.";});}catch(e){m.textContent="Select the code above and copy it.";}};
+ }
+ draw();window.scrollTo(0,0);
+}
+document.addEventListener("visibilitychange",function(){if(active&&document.hidden){sw++;}});
+document.addEventListener("contextmenu",function(e){if(active){e.preventDefault();}});
+document.addEventListener("copy",function(e){if(active){e.preventDefault();}});
+gate();
+</script>
+</body>
+</html>
